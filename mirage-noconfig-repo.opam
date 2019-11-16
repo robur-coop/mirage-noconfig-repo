@@ -16,12 +16,14 @@ build: [
 x-mirage-interface: [
   [ ["interface" "Mirage_kv.RO"]
     ["findlib" "mirage-kv"]
+    ["opam" "mirage-kv"]
   ]
 ]
 
 x-mirage-device: [
   [ ["default" true]
     ["findlib" "mirage-kv-mem"]
+    ["opam" "mirage-kv-mem"]
     ["interface" "Mirage_kv.RO"]
     ["functor" "Mirage_kv_mem.Make"]
   ]
