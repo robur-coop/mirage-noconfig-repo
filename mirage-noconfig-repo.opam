@@ -1,0 +1,32 @@
+opam-version: "2.0"
+name:         "mirage-noconfig-repo"
+homepage:     "https://github.com/roburio/mirage-noconfig-repo"
+dev-repo:     "git+https://github.com/roburio/mirage-config-repo.git"
+bug-reports:  "https://github.com/robur/mirage-noconfig-repo/issues"
+doc:          "https://roburio.github.io/mirage-noconfig-repo/doc"
+synopsis:      "Mockup of how devices will look with mirage-noconfig"
+description: "Red"
+author:       ["cfcs"]
+maintainer:   ["cfcs"]
+license:      "BSD-2"
+
+build: [
+]
+
+x-mirage-interface: [
+  [ ["interface" "Mirage_kv.RO"]
+    ["findlib" "mirage-kv"]
+  ]
+]
+
+x-mirage-device: [
+  [ ["default" true]
+    ["findlib" "mirage-kv-mem"]
+    ["interface" "Mirage_kv.RO"]
+    ["functor" "Mirage_kv_mem.Make"]
+  ]
+]
+
+depends: [
+  "ocaml"     { >= "4.05" }
+]
